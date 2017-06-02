@@ -1,0 +1,82 @@
+## Linux 学习
+
+### 	Linux 命令记录
+
+### 		
+
+​	1,在图形化界面下改变文件的权限：sudo nautilus
+​	2,找文件：find -name '文件名(这可以使用*)' -ls（找到文件将文件内容列出来）
+
+​		http://www.ruanyifeng.com/blog/2009/10/5_ways_to_search_for_files_using_the_terminal.html							
+
+​	3,创建快捷方式
+​	4,删除文件夹里所以的内容：rm -rf 文件夹
+​	http://www.ruanyifeng.com/blog/2009/10/5_ways_to_search_for_files_using_the_terminal.html
+
+​	5,安装软件：sudo apt-get install 软件名
+	  安装dep:sudo dpkg -i 软件名	如果n出现了依赖问题则输入命令：sudo apt-get -f install 然后在执行前面的命令	
+​	6,卸载软件：sudo apt-get remove 软件名      不确定软件名的时候使用 dpkg -l|grep '*'
+	https://jingyan.baidu.com/article/a24b33cd5678bd19fe002bf6.html
+
+​	7,设置环境变量：找到/etc/profile文件，在文件的最后一行添加环境变量。下面是添加Java的环境变量	
+
+```
+	JAVA_HOME=/usr/java/jdk1.8.0_131
+
+	CLASSPATH=$JAVA_HOME/lib/
+
+	PATH=PATH:JAVA_HOME/bin
+
+	export PATH JAVA_HOME CLASSPATH
+```
+
+​	8,查询有的软件安装：dpkg -l
+
+​	9,Linux 安装有道
+
+​		http://www.linuxdiyf.com/linux/21143.html
+
+​	10,Linux 安装Mysql以及Mysql图形化界面	
+
+```java
+安装mysql
+	sudo apt-get install mysql-server
+	sudo apt-get install mysql-client
+	sudo apt-get install libmysqlclient-dev
+检查mysql是否安装成功
+	sudo netstat -tap | grep mysql
+使用命令登录mysql
+	mysql -u root -p
+显示数据库
+	show databases;
+切换到不同数据库
+	use 数据库名;
+查看数据库中表
+	show tables;
+如果服务器不能正常运行，您可以通过下列命令启动它：
+	sudo /etc/init.d/mysql restart 
+安装mysql的可视化界面（mysql workbench）
+	sudo apt-get install mysql-workbench
+```
+
+  11,在Linux中启动Fiddler:找到Filddler的解压路径n然后h执行mono Fiddler.exe
+
+   12,创建文件夹：mkdir 文件夹名，创建文件touch 文件名
+
+   13,e快捷键o启动终端:win+T
+
+
+### 	Linux错误解决
+
+#### 		error while loading shared libraries
+
+​			1,http://blog.csdn.net/dumeifang/article/details/2963223
+
+​			2,要是上述文件不存在，则可以运行，下面的文件名就是你自己要找的那个文件
+
+```
+sudo apt-get install libgconf-2-4`
+```
+
+
+
