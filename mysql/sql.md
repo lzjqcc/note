@@ -186,3 +186,21 @@ end while
 ```sql
 drop procedure 存储过程名
 ```
+
+### MySQL数据库的备份与恢复
+
+​	备份数据库称为转储(dump)
+
+#### 	转储数据库
+
+```sql
+mysqldump -u 用户名 -p密码 数据库名 > 输出名 ##如果出现转储失败则在后面加上--default-character-set=utf-8
+mysqldump -u 用户名 -p密码 数据库名 > 输出名 --default-character-set=utf-8
+```
+
+#### 	使用转储文件恢复数据库
+
+```
+mysqladmin -u 用户名 -p create 新数据库名
+mysql -u 用户名 -p密码 新数据库名<转储文件名
+```
