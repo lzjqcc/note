@@ -59,24 +59,46 @@
 	sudo apt-get install mysql-workbench
 ```
 
-  11,在Linux中启动Fiddler:找到Filddler的解压路径n然后h执行mono Fiddler.exe
+  11,在Linux中启动Fiddler:找到Filddler的解压路径n然后h执行
+
+
+
+mono Fiddler.exe
 
    12,创建文件夹：mkdir 文件夹名，创建文件touch 文件名
 
-   13,e快捷键o启动终端:win+T
+   13,快捷键启动新的终端:win+T
 
+   14，添加windows引导项：sudo update-grub   
 
-### 	Linux错误解决
+​    15，解压rar文件 ：rar x 文件名
+​            压缩rar文件：rar a 压缩名称  原文件名
 
-#### 		error while loading shared libraries
+​		安装rar 
 
-​			1,http://blog.csdn.net/dumeifang/article/details/2963223
+[http://www.rarlab.com/download.htm](http://www.rarlab.com/download.htm)
 
-​			2,要是上述文件不存在，则可以运行，下面的文件名就是你自己要找的那个文件
+​	进入到rar的解压文件中执行下面命令
+
+1. [root@localhost rar]# make  
+
+   ​
+
+   16，使用命令打开文件夹:nautilus 文件夹名
+
+   ### Linux错误解决
+
+   #### 	error while loading shared libraries
+
+   ​		1,http://blog.csdn.net/dumeifang/article/details/2963223
+
+   ​		2,要是上述文件不存在，则可以运行，下面的文件名就是你自己要找的那个文件
 
 ```
 sudo apt-get install libgconf-2-4`
 ```
 
-
+    17，在linux访问google
+	https://github.com/racaljk/hosts
+	这上面有方案	
 
