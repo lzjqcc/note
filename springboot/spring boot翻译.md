@@ -121,3 +121,61 @@ public class TestController {
   ... 
 } 
 ```
+#### Spring boot 整合Spring MVC
+#####静态文件
+
+静态文件：js ,image。。。这些文件默认是放在static 目录下，在网页中引用如下
+```html
+jquery-3.2.1.min.js的路径是：/src/main/resources/static/jquery3.2.1.main.js
+<script src="/jquery-3.2.1.min.js"/>
+```
+#####.ftl文件
+对于网页文件spring boot推荐使用 .ftl文件，这种类型的文件默认放在templates目录下
+比如存放一个first.ftl文件
+```java
+/src/main/resources/templates/first.ftl
+控制类
+@Controller
+public class HelloController {
+    @Autowired
+    @RequestMapping("/first")
+    public String first(){
+        return "first";
+    }
+}
+//访问路径  http://localhost:8080/first
+```
+#####html
+通过如下控制类访问html
+```java
+//如果要访问html一定要加上这个thymeleaf
+@Controller
+@RequestMapping("/thymeleaf")
+public class HtmlController {
+    //访问view.html页面
+    @RequestMapping("/view")
+    public String view(){
+        return "view";
+    }
+    //访问hello.html页面
+    @RequestMapping("/hi")
+    public String hello(){
+        return "hello";
+    }
+}
+```
+通过spring mvc访问html网页文件需谨记以下几点
+1. index.html问默认访问页面。存放路径/src/main/resources/static/index.html  
+  访问路径：http://localhost:8080/
+2. 在pom.xml引入如下配置，不然访问页面会出现Circular view path : would dispatch back to the current handler URL again. Check your ViewResolver 错误。
+```xml
+    <!--导入这个-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+    <dependency>
+```
+3. html页面要默认放在/src/main/resources/templates目录下。
+
+
